@@ -1,0 +1,43 @@
+{
+  "name": "chattrbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "browserify -d app/scripts/src/main.js -o app/scripts/dist/main.js",
+    "watch": "watchify -v -d app/scripts/src/main.js -o app/scripts/dist/main.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ],
+          "sourceMap": true
+        }
+      ]
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "crypto-js": "^4.0.0",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.6",
+    "watchify": "^3.11.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "ws": "^7.4.0"
+  }
+}
